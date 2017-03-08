@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\compiler">
+      <UniqueIdentifier>{1862defc-75d4-41a9-9c97-a06d1f11ff3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\runtime">
+      <UniqueIdentifier>{13644d51-833a-43f6-bb3f-f14a2aa02d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shared">
+      <UniqueIdentifier>{7c8edc9d-113d-4a46-b210-69c3a4cb55b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{973b4ecd-1653-4ca1-8143-38111fceae4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\compiler">
+      <UniqueIdentifier>{978e4c3c-cb28-4609-adc5-0c26070a3a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{0312bb2e-9019-4556-ae9d-dc0b132f2ce8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared">
+      <UniqueIdentifier>{cfaf8fe7-070e-45c7-ae52-485e13f2b420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\runtime">
+      <UniqueIdentifier>{39e1ae30-c779-4931-ba27-8378c10161ee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\debug_macros.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_ast.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_codegen.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_compiler.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_ircode.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_lexer.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_optimizer.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_parser.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_semacheck1.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_semacheck2.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_symboltable.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_token.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\compiler\gravity_visitor.h">
+      <Filter>Header Files\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\utils\gravity_debug.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\utils\gravity_json.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\utils\gravity_utils.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\shared\gravity_array.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\shared\gravity_delegate.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\shared\gravity_hash.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\shared\gravity_macros.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\shared\gravity_memory.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\shared\gravity_opcodes.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\shared\gravity_value.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\runtime\gravity_core.h">
+      <Filter>Header Files\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\runtime\gravity_vm.h">
+      <Filter>Header Files\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gravity\src\runtime\gravity_vmmacros.h">
+      <Filter>Header Files\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="unistd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Gravity.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_ast.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_codegen.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_compiler.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_ircode.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_lexer.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_optimizer.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_parser.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_semacheck1.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_semacheck2.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_symboltable.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_token.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\compiler\gravity_visitor.c">
+      <Filter>Source Files\compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\utils\gravity_debug.c">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\utils\gravity_json.c">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\utils\gravity_utils.c">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\shared\gravity_hash.c">
+      <Filter>Source Files\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\shared\gravity_memory.c">
+      <Filter>Source Files\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\shared\gravity_value.c">
+      <Filter>Source Files\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\runtime\gravity_core.c">
+      <Filter>Source Files\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gravity\src\runtime\gravity_vm.c">
+      <Filter>Source Files\runtime</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
