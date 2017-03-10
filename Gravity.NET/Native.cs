@@ -59,11 +59,27 @@ namespace GravityNET {
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct GravityVM {
 		public IntPtr Pointer;
+
+		public GravityVM(GravityDelegate D) {
+			Pointer = Native.GravityVM_New(D).Pointer;
+		}
+
+		public static implicit operator bool(GravityVM VM) {
+			return VM.Pointer != IntPtr.Zero;
+		}
 	}
 
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct GravityCompiler {
 		public IntPtr Pointer;
+
+		public GravityCompiler(GravityDelegate D) {
+			Pointer = Native.GravityCompiler_Create(D).Pointer;
+		}
+
+		public static implicit operator bool(GravityCompiler C) {
+			return C.Pointer != IntPtr.Zero;
+		}
 	}
 
 	// Normal 
@@ -96,39 +112,45 @@ namespace GravityNET {
 		public double F;
 	}
 
-	public class Native {
+	public static class Native {
 		internal const string DllName = "GravityLang";
 		internal const CallingConvention CConv = CallingConvention.Cdecl;
 		internal const CharSet CSet = CharSet.Ansi;
 
 		// VM
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern GravityVM gravity_vm_new(GravityDelegate D);
+		[DllImport(DllName, EntryPoint = "gravity_vm_new", CallingConvention = CConv, CharSet = CSet)]
+		public static extern GravityVM GravityVM_New(GravityDelegate D);
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern bool gravity_vm_run(GravityVM VM, GravityClosurePtr Closure);
+		[DllImport(DllName, EntryPoint = "gravity_vm_run", CallingConvention = CConv, CharSet = CSet)]
+		public static extern bool Run(this GravityVM VM, GravityClosurePtr Closure);
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern GravityValue gravity_vm_result(GravityVM VM);
+		[DllImport(DllName, EntryPoint = "gravity_vm_result", CallingConvention = CConv, CharSet = CSet)]
+		public static extern GravityValue Result(this GravityVM VM);
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern double gravity_vm_time(GravityVM VM);
+		[DllImport(DllName, EntryPoint = "gravity_vm_time", CallingConvention = CConv, CharSet = CSet)]
+		public static extern double Time(this GravityVM VM);
 
 		// Compiler
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern GravityCompiler gravity_compiler_create(GravityDelegate D);
+		[DllImport(DllName, EntryPoint = "gravity_compiler_create", CallingConvention = CConv, CharSet = CSet)]
+		public static extern GravityCompiler GravityCompiler_Create(GravityDelegate D);
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern GravityClosurePtr gravity_compiler_run(GravityCompiler Compiler, string Src, IntPtr Len, uint FileID, bool IsStatic);
+		[DllImport(DllName, EntryPoint = "gravity_compiler_run", CallingConvention = CConv, CharSet = CSet)]
+		public static extern GravityClosurePtr Run(this GravityCompiler Compiler, string Src, IntPtr Len, uint FileID, bool IsStatic);
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern void gravity_compiler_transfer(GravityCompiler Compiler, GravityVM VM);
+		[DllImport(DllName, EntryPoint = "gravity_compiler_transfer", CallingConvention = CConv, CharSet = CSet)]
+		public static extern void Transfer(this GravityCompiler Compiler, GravityVM VM);
 
 		// Shared
 
-		[DllImport(DllName, CallingConvention = CConv, CharSet = CSet)]
-		public static extern void gravity_value_dump(GravityValue V, StringBuilder Buffer, ushort Len);
+		[DllImport(DllName, EntryPoint = "gravity_value_dump", CallingConvention = CConv, CharSet = CSet)]
+		public static extern void Dump(this GravityValue V, StringBuilder Buffer, ushort Len);
+
+		public static string Dump(this GravityValue V, int MaxLen = 1024) {
+			StringBuilder SB = new StringBuilder(1024);
+			V.Dump(SB, (ushort)SB.MaxCapacity);
+			return SB.ToString();
+		}
 	}
 }
