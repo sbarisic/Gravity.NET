@@ -56,9 +56,8 @@ namespace GravityNET {
 	}
 
 	// GravityVM and GravityCompiler are opaque, don't need Ptr suffix
-	[StructLayout(LayoutKind.Explicit, Pack = 1)]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct GravityVM {
-		[FieldOffset(0)]
 		public IntPtr Pointer;
 	}
 
@@ -67,6 +66,7 @@ namespace GravityNET {
 		public IntPtr Pointer;
 	}
 
+	// Normal 
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct GravityClosurePtr {
 		public IntPtr Pointer;
